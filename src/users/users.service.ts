@@ -56,7 +56,7 @@ export class UsersService {
     return new UnauthorizedException('User is not authorized');
   }
 
-  async deleteUser(@Param('id') id: number): Promise<DeleteResult> {
+  private async deleteUser(@Param('id') id: number): Promise<DeleteResult> {
     return this.usersRepository.delete({ id });
   }
 }
